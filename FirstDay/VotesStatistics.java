@@ -27,7 +27,7 @@ public class VotesStatistics {
             int m=sca.nextInt();
             sca.nextLine();
             String strr=sca.nextLine();
-            String[] arrays=strr.split("");
+            String[] arrays=strr.split(" ");
             for(String s:arrays){
                 if(map.containsKey(s)){
                     map.put(s,map.get(s)+1);
