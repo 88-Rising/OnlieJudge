@@ -41,7 +41,7 @@ public class MySequence {
                   BigInteger num=sc.nextBigInteger();
                   array.add(num);
                 }
-         Collections.sort(array);
+               Collections.sort(array);
                 for(int i=0;i<array.size();i++){
 
                     System.out.println(array.get(i));
