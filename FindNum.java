@@ -12,18 +12,18 @@ public class FindNum {
         String[] str01 = (str.replace("[", "").
                 replace("]", "")).split(",");
         int[] nums = new int[str01.length];
-        List list=new ArrayList();
+//        List list=new ArrayList();
         for (int i = 0; i < nums.length; i++) {
             nums[i] = Integer.parseInt(str01[i]);
         }
         Arrays.sort(nums);
-        for(int j=0;j<nums.length-1;j++){
-            if(nums[j]!=nums[j+1]){
-                list.add(nums[j]);
-
-            }
-        }
-        list.add(nums[nums.length-1]);
+//        for(int j=0;j<nums.length-1;j++){
+//            if(nums[j]!=nums[j+1]){
+//                list.add(nums[j]);
+//
+//            }
+//        }
+//        list.add(nums[nums.length-1]);
 //        for(int i = 0;i < list.size();i++){
 //            System.out.println(list.get(i));
 //        }
