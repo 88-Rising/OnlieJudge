@@ -27,10 +27,10 @@ public class FindNum {
 //        for(int i = 0;i < list.size();i++){
 //            System.out.println(list.get(i));
 //        }
-//       if(list.size()<5){
-//           System.out.println(list.get(2));
+//       if(list.size()<2){
+//           System.out.println(-1);
 //       }else{
-//           System.out.println(list.get(list.size()-2));
+//           System.out.println(list.get(list.size()-3));
 //       }
 
         if(nums.length<2){
