@@ -4,7 +4,7 @@ import javax.swing.plaf.basic.BasicScrollPaneUI;
 import java.io.FileInputStream;
 import java.util.HashMap;
 import java.util.Scanner;
-
+//给定一个整数数组,判断其中是否有3个数和为N
 public class FindNums {
     public String findNums(String[] nums,int target){
         HashMap<Integer,Integer> map=new HashMap<>();
