@@ -16,15 +16,15 @@ class ListNode{
 * */
 public class Swordquest3 {
     public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
-        Stack<Integer> stack = new Stack<>();
-        while(listNode != null){
-            stack.push(listNode.val);
+        Stack<Integer> stack = new Stack<>(); //利用栈的先进后出的原则 从尾到头返回一个线性表
+        while(listNode != null){  //判断结点中是否为空（无需设置头节点 一并进入判断）
+            stack.push(listNode.val);//压栈
             listNode=listNode.next;
         }
 
         ArrayList<Integer> list= new ArrayList<>();
-        while(!stack.isEmpty()){
-            list.add(stack.pop());
+        while(!stack.isEmpty()){//判断栈中是否还有元素
+            list.add(stack.pop());//出栈
 
         }
         return list;
