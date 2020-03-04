@@ -38,13 +38,13 @@ public class CountStone {
             } else {
                 mA.lose++;
                 mB.win++;
-                mB.map.put("B", mA.map.get("B") + 1);
+                mB.map.put("B", mB.map.get("B") + 1);
             }
         } else if (a.equals("J")) {
             if (b.equals("C")) {
                 mA.lose++;
                 mB.win++;
-                mB.map.put("C", mA.map.get("C") + 1);
+                mB.map.put("C", mB.map.get("C") + 1);
             } else if (b.equals("J")) {
                 mA.tie++;
                 mB.tie++;
@@ -61,7 +61,7 @@ public class CountStone {
             } else if (b.equals("J")) {
                 mA.lose++;
                 mB.win++;
-                mB.map.put("J", mA.map.get("J") + 1);
+                mB.map.put("J", mB.map.get("J") + 1);
             } else {
                 mA.tie++;
                 mB.tie++;
