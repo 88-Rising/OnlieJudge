@@ -24,7 +24,6 @@ public class MakeMap{
                 int sum = 0;
                 for (int j = 1;j<list.size();j++) {
                     sum = sum+list.get(j);
-
                 }
                 if (max < sum) {
                     System.out.println("Yes");
