@@ -2,7 +2,6 @@ package Daily;
 import java.util.*;
 //木棒拼图
 public class MakeMap{
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
