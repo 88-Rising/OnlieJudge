@@ -23,6 +23,7 @@ public class MyLinkedList {
         return newNode;
 
     }
+
     public static Node getLast(Node head){
         if(head==null){
             return null;
@@ -33,6 +34,7 @@ public class MyLinkedList {
         }
         return cur;
     }
+
     public static Node pushBack(Node head,int val){
         Node newNode=new Node(val);
         if(head==null){
@@ -41,8 +43,20 @@ public class MyLinkedList {
         Node last=getLast(head);
         last.next=newNode;
         return head;
-
-
+    }
+    public static Node reverseList(Node head){
+        if(head==null){
+            return null;
+        }
+        Node newList=null;
+        Node cur=head;
+        while(cur!=null){
+         Node next=cur.next;
+         cur.next=newList;
+         newList=cur;
+         cur=next;
+        }
+        return newList;
     }
 
     public static void main(String[] args) {
@@ -51,6 +65,10 @@ public class MyLinkedList {
         head = pushFront(head,2);
         head = pushFront(head,3);
         display(head);
-
+        head = pushBack(head,5);
+        head = pushBack(head,6);
+        display(head);
+        head = reverseList(head);
+        display(head);
     }
 }
