@@ -58,6 +58,46 @@ public class MyLinkedList {
         }
         return newList;
     }
+    public static Node deleteNode(Node head,int val){
+//        Node newlist=null;
+//        Node cur=head;
+//        while(cur!=null) {
+//            Node next=cur.next;
+//            Node last=null;
+//            if(cur.val!=val) {
+//                if(newlist==null) {
+//                    cur.next=newlist;
+//                    newlist=cur ;
+//                }else {
+//                    last=newlist;
+//                    while(last.next!=null) {
+//                        last=last.next;
+//                    }
+//                    last.next=cur;
+//                    cur.next=null;
+//                }
+//            }
+//            cur=next;
+//        }
+//        return newlist;
+        Node sentinel = new Node(0);
+        sentinel.next = head;
+
+        Node prev = sentinel;
+        Node curr = head;
+        while (curr != null) {
+            if (curr.val == val) {
+                prev.next = curr.next;
+            }
+            else {
+                prev = curr;
+            }
+            curr = curr.next;
+        }
+        return sentinel.next;
+
+
+    }
 
     public static void main(String[] args) {
         Node head=null;
@@ -69,6 +109,8 @@ public class MyLinkedList {
         head = pushBack(head,6);
         display(head);
         head = reverseList(head);
+        display(head);
+        head=deleteNode(head,6);
         display(head);
     }
 }
