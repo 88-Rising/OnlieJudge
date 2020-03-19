@@ -130,6 +130,25 @@ public class MyLinkedList {
        return findNode;
 
     }
+    public static Node FindKthToTail1(Node head,int k) {//快慢指针
+        Node prev=head;
+        Node slow=head;
+        int count=0;
+        while(prev!=null){
+            prev=prev.next;
+            count++;
+            if (k < 1) {
+            slow=slow.next;
+            }
+            k--;
+        }
+        if(count<k){
+            return null;
+        }
+        return slow;
+
+
+    }
 
     public static void main(String[] args) {
         Node head=null;
