@@ -1,6 +1,6 @@
 package Daily;
 
-import java.util.Stack;
+import java.util.*;
 
 class Node{
     public int val;
@@ -150,6 +150,23 @@ public class MyLinkedList {
 
 
     }
+    public static Node mergeTwoLists(Node l1, Node l2) {
+        Node prev=new Node(0);
+        Node cur=prev;
+        while(l1!=null&&l2!=null){
+            if(l1.val<=l2.val){
+                cur.next=l1;
+                l1=l1.next;
+            }else {
+                cur.next=l2;
+                l2=l2.next;
+            }
+            cur=cur.next;
+        }
+        cur.next= l1==null?l2:l1;
+        return prev.next;
+
+    }
 
     public static void main(String[] args) {
         Node head=null;
@@ -168,5 +185,16 @@ public class MyLinkedList {
         System.out.println(mid.val);
         Node findNode=FindKthToTail(head,2);
         System.out.println(findNode.val);
+        Node head3 = null;
+        head3 = pushFront(head3,2);
+        head3 = pushFront(head3,1);
+        head3 = pushFront(head3,0);
+        Node head4=null;
+        head4 = pushFront(head4,1);
+        head4 = pushFront(head4,0);
+
+        display(head3);
+        Node head2 = mergeTwoLists(head3,head4);
+        display(head2);
     }
 }
