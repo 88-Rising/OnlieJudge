@@ -1,5 +1,7 @@
 package Daily;
 
+import java.util.Stack;
+
 class Node{
     public int val;
     public Node next=null;
@@ -107,6 +109,27 @@ public class MyLinkedList {
         }
         return slow;
     }
+    public static Node FindKthToTail(Node head,int k) {//找出链表中倒数第K个节点
+        Stack<Node> stack=new Stack<>();
+        Node cur=head;
+        int count=0;
+        while(cur!=null){
+            stack.push(cur);
+            cur=cur.next;
+            count++;
+        }
+        if(count<k){
+            return null;
+        }
+
+        Node findNode=null;
+        for(int i=0;i<k;i++){
+           findNode=stack.pop();
+        }
+
+       return findNode;
+
+    }
 
     public static void main(String[] args) {
         Node head=null;
@@ -123,5 +146,7 @@ public class MyLinkedList {
         display(head);
         Node mid=middleNode(head);
         System.out.println(mid.val);
+        Node findNode=FindKthToTail(head,2);
+        System.out.println(findNode.val);
     }
 }
