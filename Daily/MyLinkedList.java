@@ -134,6 +134,7 @@ public class MyLinkedList {
         Node prev=head;
         Node slow=head;
         int count=0;
+        int a=k;
         while(prev!=null){
             prev=prev.next;
             count++;
@@ -142,7 +143,7 @@ public class MyLinkedList {
             }
             k--;
         }
-        if(count<k){
+        if(count<a){
             return null;
         }
         return slow;
