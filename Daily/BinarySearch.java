@@ -3,7 +3,6 @@ package Daily;
 public class BinarySearch {
 
     public static int binarySearch(int[] arry,int key){
-
         int low=0;
         int high=arry.length-1;
         int mid;
