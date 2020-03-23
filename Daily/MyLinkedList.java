@@ -1,5 +1,8 @@
 package Daily;
 
+import com.sun.org.apache.regexp.internal.RE;
+
+import java.lang.reflect.Array;
 import java.util.*;
 
 class Node{
@@ -167,6 +170,61 @@ public class MyLinkedList {
         return prev.next;
 
     }
+    public static Node ReverseList(Node head) {
+        Node newList=null;
+        Node cur=head;
+        Node next=null;
+        while(cur!=null){
+            next=cur.next;
+            cur.next=newList;
+            newList=cur;
+            cur=next;
+        }
+
+
+
+        return newList;
+    }
+    public Node Merge(Node list1,Node list2) {
+            Node FirstNode=new Node(0);
+            Node cur=FirstNode;
+            while(list1!=null&&list2!=null){
+                if(list1.val>=list2.val){
+                     cur.next=list2;
+                    list2=list2.next;
+                }else{
+                     cur.next=list1;
+                    list1=list1.next;
+                }
+                cur=cur.next;
+            }
+            cur.next= list1==null?list2:list1;
+        return FirstNode.next;
+
+    }
+    public static int[] reOrderArray(int[] array) {
+        ArrayList<Integer> jishu=new ArrayList<>();
+        ArrayList<Integer> oushu=new ArrayList<>();
+        for(int i=0;i<array.length;i++){
+            if(array[i]%2==0){
+                oushu.add(array[i]);
+            }else{
+                jishu.add(array[i]);
+            }
+        }
+        int[] newArray=new int[array.length];
+        int j=0;
+        for(int i = 0;i<jishu.size();i++){
+            array[j]=jishu.get(i);
+            j++;
+        }
+        for(int k=0;k<oushu.size();k++){
+            array[j]=oushu.get(k);
+            j++;
+        }
+        return array;
+
+    }
 
     public static void main(String[] args) {
         Node head=null;
@@ -196,5 +254,14 @@ public class MyLinkedList {
         display(head3);
         Node head2 = mergeTwoLists(head3,head4);
         display(head2);
+        Node head5=null;
+        head5=ReverseList(head2);
+        display(head5);
+
+        int[] arr=new int[]{1,2,3,4,5};
+        arr=reOrderArray(arr);
+        for(int i=0;i<arr.length;i++){
+            System.out.println(arr[i]);
+        }
     }
 }
