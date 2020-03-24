@@ -48,6 +48,26 @@ public class HasSubTree {
 
 
     }
+    public void Mirror(TreeNode root) {
+        if(root==null){
+            return;
+        }
+        if(root.left==null&&root.right==null){
+            return;
+        }
+        TreeNode nodeleft=root.right;
+        TreeNode noderight=root.left;
+        root.left=nodeleft;
+        root.right=noderight;
+        if(root.left!=null){
+            Mirror(root.left);
+        }
+        if(root.right!=null){
+            Mirror(root.right);
+        }
+
+    }
+
 
 }
 
