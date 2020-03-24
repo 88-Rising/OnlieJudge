@@ -1,6 +1,8 @@
 package Daily;
 
-import java.util.Stack;
+import sun.reflect.generics.tree.Tree;
+
+import java.util.*;
 
 class TreeNode {
    int val = 0;
@@ -95,6 +97,59 @@ public class HasSubTree {
 
 
     }
+    public ArrayList<Integer> printMatrix(int [][] matrix) {
+
+        int row= matrix.length;
+        int cal=matrix[0].length;
+        ArrayList<Integer> result=new ArrayList<>();
+        if(row==0||cal==0){
+            return result;
+        }
+        int left=0,top=0,bottom=row-1,right=cal-1;
+        while(left<=bottom&&top<=right) {
+            for (int i = left; i <= right; i++) {
+                result.add(matrix[top][i]);
+            }
+            for(int j=top+1;j<=bottom;j++){
+                result.add(matrix[j][right]);
+            }
+            if (top != bottom)
+                for(int t = right-1;t>=left;t--){
+                    result.add(matrix[bottom][t]);
+                }
+            if(left != right)
+                for(int k = bottom-1;k>top;k--){
+                    result.add(matrix[k][left]);
+                }
+            top++;left++;right--;bottom--;
+
+        }
+
+        return result;
+    }
+    public ArrayList<Integer> PrintFromTopToBottom(TreeNode root) {
+        ArrayList<Integer> list=new ArrayList<>();
+        if(root==null){
+            return list;
+        }
+        Deque<TreeNode> deque=new LinkedList<>();
+        deque.add(root);
+        while(!deque.isEmpty()){
+            TreeNode node=deque.pop();
+            list.add(node.val);
+            if(node.left!=null){
+                deque.add(node.left);
+            }
+            if(node.right!=null){
+                deque.add(node.right);
+            }
+
+        }
+        return list;
+
+
+    }
+
 
 
 }
