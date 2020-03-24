@@ -1,5 +1,7 @@
 package Daily;
 
+import java.util.Stack;
+
 class TreeNode {
    int val = 0;
    TreeNode left = null;
@@ -65,6 +67,32 @@ public class HasSubTree {
         if(root.right!=null){
             Mirror(root.right);
         }
+
+    }
+    public void Mirror2(TreeNode root) {
+        if(root==null){
+            return;
+        }
+        Stack<TreeNode> myStack=new Stack<>();
+        myStack.push(root);
+        while(!myStack.isEmpty()){
+            TreeNode TreeRoot= myStack.pop();
+            if(TreeRoot.left!=null||TreeRoot.right!=null){
+                TreeNode nodeLeft=TreeRoot.right;
+                TreeNode nodeRight=TreeRoot.left;
+                TreeRoot.left=nodeLeft;
+                TreeRoot.right=nodeRight;
+
+            }
+            if(TreeRoot.left!=null){
+                myStack.push(TreeRoot.left);
+            }
+            if(TreeRoot.right!=null){
+                myStack.push(TreeRoot.right);
+            }
+
+        }
+
 
     }
 
