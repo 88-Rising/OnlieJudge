@@ -1,5 +1,6 @@
 package Daily;
 
+import org.omg.PortableInterceptor.INACTIVE;
 import sun.reflect.generics.tree.Tree;
 
 import java.util.*;
@@ -148,6 +149,61 @@ public class HasSubTree {
         return list;
 
 
+    }
+
+    ArrayList<ArrayList<Integer>> resultsList = new ArrayList<ArrayList<Integer>>();
+
+    /**
+     * 建立额外一个函数，用来实现递归求解
+     * @param root
+     * @param target
+     * @return
+     */
+    public ArrayList<ArrayList<Integer>> FindPath(TreeNode root,int target) {
+        ArrayList<Integer> pathList = new ArrayList<Integer>();
+        if (root == null) {
+            return resultsList;
+        }
+
+        int curSum = 0;
+        int index = 0;
+        int []path = new int[1000];
+        this.isTargetPath(root, target, curSum, path, index);
+
+        return this.resultsList;
+    }
+
+
+    public void isTargetPath(TreeNode eleNode, int target, int curSum, int []path, int index) {
+        if (eleNode == null) {
+            return;
+        }
+
+        curSum += eleNode.val;
+        // 把该节点包含进去
+        path[index] = eleNode.val;
+        index ++;
+
+        // 当前已经是处于叶子节点，并且累计的和与target相等
+        if (curSum == target && eleNode.left == null && eleNode.right == null) {
+            // 将得到的结果放在外层结构中
+            ArrayList<Integer> pathList = new ArrayList<Integer>();
+            for (int i = 0; i < index; i++) {
+                pathList.add(path[i]);
+            }
+            resultsList.add(pathList);
+            return;
+        }
+
+        // 该节点有左子节点，前提还是要curSum 小于 target，否则递归就没有意义了
+        if (curSum < target && eleNode.left != null) {
+            this.isTargetPath(eleNode.left, target, curSum, path, index);
+        }
+
+        // 右子节点
+        if (curSum < target && eleNode.right != null) {
+            this.isTargetPath(eleNode.right, target, curSum, path, index);
+        }
     }
 
 
