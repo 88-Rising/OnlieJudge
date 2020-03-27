@@ -185,6 +185,27 @@ public class MyLinkedList {
 
         return newList;
     }
+
+    public static Node ReverseList1(Node head){
+        if(head==null){
+            return null;
+        }
+        if(head.next==null){
+            return head;
+        }
+        Node cur=head;
+        Node newList=null;
+        Node next=null;
+        while(cur!=null){
+            next=cur.next;
+            cur.next=newList;
+            newList=cur;
+            cur=next;
+
+        }
+        return newList;
+
+    }
     public Node Merge(Node list1,Node list2) {
             Node FirstNode=new Node(0);
             Node cur=FirstNode;
@@ -263,5 +284,8 @@ public class MyLinkedList {
         for(int i=0;i<arr.length;i++){
             System.out.println(arr[i]);
         }
+
+
+
     }
 }
