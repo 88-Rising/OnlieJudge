@@ -5,7 +5,6 @@ import com.sun.deploy.panel.TreeRenderers;
 import java.util.Stack;
 
 public class ConvertBSTToBiList {
-
     public static TreeNode convertBSTToBilist(TreeNode pRootOfTree){
         if(pRootOfTree==null){
             return null;
