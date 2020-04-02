@@ -30,9 +30,9 @@ public class Permutation {
             }
         }else{
             for(int j=i;j<chars.length;j++){
-                swap(i,j,chars);
-                permutation(i+1,chars,result);
-                swap(i,j,chars);
+                swap(i,j,chars);//首先固定一个数
+                permutation(i+1,chars,result);//其余的数进行全排列
+                swap(i,j,chars);//回溯，变回之前没有交换的字符串
 
             }
         }
