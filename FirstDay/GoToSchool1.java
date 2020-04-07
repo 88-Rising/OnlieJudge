@@ -7,24 +7,22 @@ public class GoToSchool1 {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
-        int N = scan.nextInt();
-        int []total=new int[N];
-        for (int i = 0; i < N; i++) {
-            // alarms.add(new Alarm(scan.nextInt(), scan.nextInt()));
-            total[i]=scan.nextInt()*60+ scan.nextInt();
+        int nums = scan.nextInt();
+        int[] timing=new int[nums];
+        for(int i=0;i<nums;i++){
+            timing[i]= scan.nextInt()*60+scan.nextInt();
         }
-        int X = scan.nextInt();
-        int A = scan.nextInt(), B = scan.nextInt();
-        int time = (A * 60 + B) - X;
-        int max=0;
-        for (int i = 0; i < N; i++) {
-
-            if (total[i]<=time&&total[i]>max){
-                max=total[i];
+        int arriveTime=scan.nextInt();
+        int openTime=scan.nextInt()*60+scan.nextInt();
+        int needtime = openTime-arriveTime;
+        int lastTime=0;
+        for(int j=0;j<nums;j++){
+            if(timing[j]<=needtime&&timing[j]>lastTime){
+                lastTime=timing[j];
             }
-        }
 
-        System.out.println(max/60 + " " + max%60);
+        }
+        System.out.println(lastTime/60+" "+lastTime%60);
 
     }
 
