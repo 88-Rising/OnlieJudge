@@ -37,7 +37,7 @@ public class IntoBag {
         if(w == 0) {
             return 1;
         }
-        if(w - arr[(int)i] >= 0) {
+        if(w - arr[(int)i] >0) {
             return loop(arr, i - 1, w - arr[(int)i]) + loop(arr, i - 1, w);
         }else {
             return loop(arr, i - 1, w);
