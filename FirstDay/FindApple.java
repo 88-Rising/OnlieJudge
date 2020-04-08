@@ -1,5 +1,6 @@
 package FirstDay;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class FindApple {
@@ -8,19 +9,24 @@ public class FindApple {
         Scanner sc=new Scanner(System.in);
         int nums=sc.nextInt();
         int[] appleHeap=new int[nums];
+        int temp=0;
+        int sum=0;
         for(int i=0;i<nums;i++){
-            appleHeap[i]=sc.nextInt();
+             temp=sc.nextInt();
+             sum+=temp;
+             appleHeap[i]+=sum;
         }
         int Qnums=sc.nextInt();
         int[] findApple=new int[Qnums];
         for(int j= 0;j<Qnums;j++){
             findApple[j]=sc.nextInt();
-            int k=0;
-            while(findApple[j]-appleHeap[k]>0){
-                findApple[j]=findApple[j]-appleHeap[k];
-                k++;
-            }
+            int k= Arrays.binarySearch(appleHeap,findApple[j]);
+            if(k>0){
+
             System.out.println(k+1);
+            }else{
+                System.out.println(-k);
+            }
         }
 
 
