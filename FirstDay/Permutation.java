@@ -8,7 +8,6 @@ import java.util.Scanner;
 * 给定一个由不同的小写字母组成的字符串，输出这个字符串的所有全排列。 我们假设对于小写字母有'a' < 'b' < ... < 'y' < 'z'，而且给定的字符串中的字母已经按照从小到大的顺序排列。
 * */
 public class Permutation {
-
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         String scan=sc.nextLine();
