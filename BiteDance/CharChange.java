@@ -4,7 +4,7 @@ package BiteDance;
 替换之后的字符串为We%20Are%20Happy。
 */
 
-public class CharChange {
+public class CharChange {//核心：临界条件处理
     public String replaceSpace(StringBuffer str){
         int count=0;
         for(int i=0;i<str.length();i++){
