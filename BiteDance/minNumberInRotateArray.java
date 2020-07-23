@@ -27,4 +27,18 @@ public class minNumberInRotateArray {
         }
         return array[mid];
     }
+
+    public int solution1(int[] array){
+        if(array==null||array.length==0){
+            return 0;
+        }
+        int result=array[0];
+        for(int i=0;i<array.length;i++){
+            if(result>array[i]){
+               result=array[i];
+            }
+        }
+        return result;
+
+    }
 }
