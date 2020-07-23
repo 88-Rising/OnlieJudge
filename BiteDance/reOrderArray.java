@@ -51,7 +51,35 @@ public class reOrderArray {
 
         }
 
+    }
 
+    public static String replaceSpace1(StringBuffer str){
+        if(str==null||str.length()==0){
+            return null;
+        }
+        int count=0;
+        for(int i=0;i<str.length();i++){
+            if(str.charAt(i)==' '){
+                count++;
+            }
+        }
+        int new_Length=str.length()+2*count;
+        int oldLength=str.length()-1;
+        int newLength=str.length()+2*count-1;
+        str.setLength(new_Length);
+
+        while(oldLength>=0&&newLength>=0){
+            if(str.charAt(oldLength)!=' '){
+                str.setCharAt(newLength--,str.charAt(oldLength));
+                oldLength--;
+            }else{
+                str.setCharAt(newLength--,'0');
+                str.setCharAt(newLength--,'2');
+                str.setCharAt(newLength--,'%');
+                oldLength--;
+            }
+        }
+        return str.toString();
 
     }
 
@@ -72,5 +100,9 @@ public class reOrderArray {
         reOrderArray.reOrderArrays(array);
         System.out.println(Arrays.toString(array));
 
+        StringBuffer stringBuffer=new StringBuffer("we are happy");
+        System.out.println(stringBuffer);
+        String str=reOrderArray.replaceSpace1(stringBuffer);
+        System.out.println(str);
     }
 }
