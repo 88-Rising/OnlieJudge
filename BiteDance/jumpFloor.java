@@ -19,8 +19,22 @@ public class jumpFloor {
         return third;
     }
 //    private HashMap<Integer,Integer> map= new HashMap<>();
+    //动态规划：
+    /*
+    * 1.定义状态   f(n)：青蛙跳上第n个台阶的总跳法数
+    * 2.编写状态转移方程  f(n)=f(n-1)+f(n-2)
+    * 3.设置初始值
+    * */
     public int solution1(int target){
+        int [] dp=new int[target+1];
+         dp[0]=1;
+         dp[1]=1;
 
-       return target;
+         for(int i=2;i<=target;i++){
+        dp[i]=dp[i-1]+dp[i-2];
     }
+
+
+       return dp[target];
+}
 }
