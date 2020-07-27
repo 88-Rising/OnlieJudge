@@ -6,6 +6,7 @@ import sun.reflect.generics.tree.Tree;
 从上往下打印出二叉树的每个节点，同层节点从左至右打印
 * */
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -30,5 +31,31 @@ public class printFromTopToBottom {
 
         }
         return result;
+    }
+
+    public ArrayList<Integer> solution2(TreeNode root){
+        if(root==null){
+            return new ArrayList<Integer>();
+        }
+
+        ArrayList<Integer> result=new ArrayList<>();
+        Deque<TreeNode> deque=new LinkedList<>();
+
+        deque.add(root);
+        while(!deque.isEmpty()){
+            TreeNode father=deque.poll();
+            result.add(father.val);
+
+            if(father.left!=null){
+                deque.add(father.left);
+            }
+            if(father.right!=null){
+                deque.add(father.right);
+            }
+
+        }
+        return result;
+
+
     }
 }

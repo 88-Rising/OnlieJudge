@@ -52,6 +52,25 @@ public class reOrderArray {
         }
 
     }
+    public static void reOrderArrays1(int[] array){
+        if(array==null){
+            return;
+        }
+        int k=0;
+        for(int i=0;i<array.length;i++){
+            if((array[i]&1)==1){
+                int temp=array[i];
+                int j=i;
+                while(k<j){
+                    array[j]=array[j-1];
+                    j--;
+                }
+                array[k++]=temp;
+            }
+
+        }
+
+    }
 
     public static String replaceSpace1(StringBuffer str){
         if(str==null||str.length()==0){
