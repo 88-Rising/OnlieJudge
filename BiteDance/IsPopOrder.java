@@ -13,9 +13,9 @@ public class IsPopOrder {
         Stack<Integer> stack =new Stack<>();
         int j=0;
         for(int i=0;i<pushA.length;i++){
-            stack.push(pushA[i]);
+            stack.push(pushA[i]);   //先入栈
 
-            while(!stack.empty()&&stack.peek()==popA[j]){
+            while(!stack.empty()&&stack.peek()==popA[j]){//碰到popA的 第一个元素然后开始弹栈
                 stack.pop();
                 j++;
             }
