@@ -76,11 +76,15 @@ public class QuickSort {
     public static  void shellInsertSort(int [] array,int dk){
         for(int i=dk;i<array.length;i++){
             int insertVal=array[i];
-            int j=i-dk;
-            for(;j>=0&&insertVal<array[j];j=j-dk){
+            int index=i-dk;
+            /*for(;j>=0&&insertVal<array[j];j=j-dk){
                 array[j+dk]=array[j];
+            }*/
+            while(index>=0&&array[index]>insertVal){
+                array[index+dk]=array[index];
+                index-=dk;
             }
-            array[j+dk]=insertVal;
+            array[index+dk]=insertVal;
         }
 
     }
