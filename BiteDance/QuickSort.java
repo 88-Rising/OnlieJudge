@@ -1,5 +1,6 @@
 package BiteDance;
 
+import javax.xml.soap.SOAPHeaderElement;
 import java.util.Arrays;
 
 public class QuickSort {
@@ -49,15 +50,46 @@ public class QuickSort {
     //插入排序
     public static void insertSort(int[] array){
         for(int i=1;i<array.length;i++){
-            int insertVal=array[i];
-            int index=i-1;//被插入的位置（准备使用InsertVal和前一个数进行比较）
-            while(index>=0&&insertVal<array[index]){
+            int insertVal=array[i];//准备插入的数据
+            int index=i-1;
+            while(index>=0&&array[index]>insertVal){
                 array[index+1]=array[index];
                 index--;
             }
             array[index+1]=insertVal;
         }
+    }
+    //冒泡排序
+    public static void bubbleSort(int [] array){
+        for(int i=0;i<array.length-1;i++){
+            for(int j=0;j<array.length-1-i;j++){
+                if(array[j+1]<array[j]){
+                    int temp=array[j+1];
+                    array[j+1]=array[j];
+                    array[j]=temp;
+                }
+            }
 
+        }
+    }
+    //希尔排序
+    public static  void shellInsertSort(int [] array,int dk){
+        for(int i=dk;i<array.length;i++){
+            int insertVal=array[i];
+            int j=i-dk;
+            for(;j>=0&&insertVal<array[j];j=j-dk){
+                array[j+dk]=array[j];
+            }
+            array[j+dk]=insertVal;
+        }
+
+    }
+    public static void shellSort(int[] array){
+        int dk=array.length/3+1;
+        while(dk>1){
+            shellInsertSort(array,dk);
+            dk=dk/3+1;
+        }
     }
 
 
@@ -68,6 +100,12 @@ public class QuickSort {
         int [] array1=new int[]{4,5,6,3,2,1};
         insertSort(array1);
         System.out.println(Arrays.toString(array1));
+        int [] array2=new int[]{4,5,6,3,2,1};
+        bubbleSort(array2);
+        System.out.println(Arrays.toString(array2));
+        int [] array3=new int[]{4,5,6,3,2,1};
+        shellSort(array3);
+        System.out.println(Arrays.toString(array3));
     }
 }
 
