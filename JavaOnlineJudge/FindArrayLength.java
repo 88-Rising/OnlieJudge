@@ -15,7 +15,6 @@ import java.util.Set;
  )，空间复杂度为O(n)O(n)
 * */
 public class FindArrayLength {
-
         public static void main(String[] args) {
             Scanner scanner = new Scanner(System.in);
             int n = scanner.nextInt();
