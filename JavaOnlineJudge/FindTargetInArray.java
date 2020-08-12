@@ -10,6 +10,7 @@ import java.io.*;
 public class FindTargetInArray{
 
     public static void main(String[] args) throws IOException{
+
         BufferedReader bufferedReader=new BufferedReader(new InputStreamReader(System.in));
         String[] lineFirst=bufferedReader.readLine().split(" ");
         int n=Integer.parseInt(lineFirst[0]);
