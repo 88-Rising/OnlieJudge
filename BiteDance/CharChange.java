@@ -30,4 +30,29 @@ public class CharChange {//核心：临界条件处理
         return str.toString();
     }
 
+    public static String replaceSpace1(StringBuffer str){
+        int cuont=0;
+        for(int i=0;i<str.length();i++){
+            if(str.charAt(i)==' '){
+                cuont++;
+            }
+        }
+
+        int new_length=str.length()+2*cuont;
+        int newEnd=new_length-1;
+        int oldEnd=str.length()-1;
+        str.setLength(new_length);
+        while(newEnd>=0&&oldEnd>=0){
+            if(str.charAt(oldEnd)==' '){
+                str.setCharAt(newEnd--,'0');
+                str.setCharAt(newEnd--,'2');
+                str.setCharAt(newEnd--,'%');
+                oldEnd--;
+            }else{
+                str.setCharAt(newEnd--,str.charAt(oldEnd--));
+            }
+        }
+        return str.toString();
+    }
+
 }
