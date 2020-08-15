@@ -29,6 +29,7 @@ public class CharChange {//核心：临界条件处理
         }
         return str.toString();
     }
+
     public static String replaceSpace1(StringBuffer str){
         int cuont=0;
         for(int i=0;i<str.length();i++){
