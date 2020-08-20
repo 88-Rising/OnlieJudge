@@ -21,6 +21,7 @@ public class Chosen {
         int size=Integer.parseInt(bufferedReader.readLine());
         String[] nums=bufferedReader.readLine().split(" ");
         int[] array=new int[size];
+
         int count=0;
         for(int i=0;i<size;i++){
             array[i]=Integer.parseInt(nums[i]);
