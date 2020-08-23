@@ -16,6 +16,7 @@ import java.io.InputStreamReader;
 * */
 public class Chosen {
     public static void main(String[] args) throws IOException {
+
         BufferedReader bufferedReader=new BufferedReader(new InputStreamReader(System.in));
         int size=Integer.parseInt(bufferedReader.readLine());
         String[] nums=bufferedReader.readLine().split(" ");
