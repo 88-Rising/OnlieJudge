@@ -7,20 +7,37 @@ package BiteDance;
 public class verifySquenceOfBST {
 
     public boolean  VerifySquenceOfBSTCore(int[] seqence,int start,int end){
-        if(start>=end){
+//        if(start>=end){
+//            return true;
+//        }
+//        int root=seqence[end];//记录根节点
+//        int i=0;
+//        while(seqence[i]<root&&i<end){//得出左子树
+//            i++;
+//        }
+//
+//        for(int j=i;j<end;j++){//遍历右子树判断是否符合BST规定
+//            if(seqence[j]<root){
+//                return false;
+//            }
+//
+//        }
+//        return VerifySquenceOfBSTCore(seqence,0,i-1)&&VerifySquenceOfBSTCore(seqence,i,end-1);
+
+
+        if(start<=end){
             return true;
         }
-        int root=seqence[end];
+
+        int root = seqence[end];
         int i=0;
         while(seqence[i]<root&&i<end){
             i++;
         }
-
         for(int j=i;j<end;j++){
             if(seqence[j]<root){
                 return false;
             }
-
         }
         return VerifySquenceOfBSTCore(seqence,0,i-1)&&VerifySquenceOfBSTCore(seqence,i,end-1);
 
