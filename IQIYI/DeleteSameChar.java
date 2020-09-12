@@ -2,6 +2,7 @@ package IQIYI;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Scanner;
 /*
 * 牛牛有一个由小写字母组成的字符串s,在s中可能有一些字母重复出现。比如在"banana"中,字母'a'和字母'n'分别出现了三次和两次。
@@ -13,19 +14,28 @@ public class DeleteSameChar {
 
         Scanner sc=new Scanner(System.in);
         String stirngs=sc.nextLine();
-        StringBuilder stringBuilder=new StringBuilder();
-        HashMap<Integer,Character> map=new HashMap<>();
-        int j=0;
-        for(int i=0;i<stirngs.length();i++){
-            if(!map.containsValue(stirngs.charAt(i))){
-                map.put(j,stirngs.charAt(i));
-                j++;
-            }
-        }
-        for(int k=0;k<j;k++){
-            stringBuilder.append(map.get(k));
-        }
-        System.out.println(stringBuilder.toString());
+        StringBuffer stringBuilder=new StringBuffer();
+//        HashMap<Integer,Character> map=new HashMap<>();
+//        int j=0;
+//        for(int i=0;i<stirngs.length();i++){
+//            if(!map.containsValue(stirngs.charAt(i))){
+//                map.put(j,stirngs.charAt(i));
+//                j++;
+//            }
+//        }
+//        for(int k=0;k<j;k++){
+//            stringBuilder.append(map.get(k));
+//        }
+//        System.out.println(stringBuilder.toString());
 
+        HashSet<Character> set =new LinkedHashSet<>();//linkedHashSet有序
+        for(int i=0;i<stirngs.length();i++){
+            set.add(stirngs.charAt(i));
+        }
+        for(char c:set){
+            stringBuilder.append(c);
+        }
+
+        System.out.println(stringBuilder.toString());
     }
 }
