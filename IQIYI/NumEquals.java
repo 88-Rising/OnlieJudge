@@ -10,7 +10,6 @@ import java.math.BigInteger;
 *
 * */
 public class NumEquals {
-
     public static void main(String[] args) throws IOException {
         BufferedReader bf=new BufferedReader(new InputStreamReader(System.in));
         String[] strings=bf.readLine().split(" ");

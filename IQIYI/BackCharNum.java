@@ -11,7 +11,6 @@ import java.util.Scanner;
 * */
 
 public class BackCharNum {
-
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
         int left=scanner.nextInt();
@@ -27,9 +26,7 @@ public class BackCharNum {
             left++;
         }
         System.out.println(res);
-
     }
-
     private static boolean IsReverse(int left) {
         String strings=String.valueOf(left);
         int i=0;
@@ -42,7 +39,6 @@ public class BackCharNum {
             j--;
         }
         return true;
-
     }
 
     private static boolean isPrime(int left) {
