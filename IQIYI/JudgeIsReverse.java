@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashSet;
-
+//判断一个字符串是否使另一个字符串的旋转字符串
 public class JudgeIsReverse {
 
     public static void main(String[] args) throws IOException {
