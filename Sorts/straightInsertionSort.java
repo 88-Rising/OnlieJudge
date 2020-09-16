@@ -7,7 +7,7 @@ public class straightInsertionSort {
         for(int i=1;i<nums.length;i++){
             int temp=nums[i];
             int index=i-1;
-            while(i>=1&&nums[index]>temp){
+            while(index>=0&&nums[index]>temp){
                 nums[i]=nums[index];
                 index--;
             }
