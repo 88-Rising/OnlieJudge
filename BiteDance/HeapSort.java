@@ -31,7 +31,7 @@ public class HeapSort {
     private static void heapify(int[] array, int index, int size) {
         int left=2*index+1;
         int right=2*index+2;
-        while(left<size){
+        while(right<=size){
             int largestIndex;
 
             if(array[left]<array[right]&&right<size){
