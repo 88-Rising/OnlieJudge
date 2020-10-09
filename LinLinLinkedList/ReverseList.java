@@ -13,21 +13,37 @@ class ListNode{
 
 public class ReverseList {
 
-    public ListNode reverseList(ListNode head){
+//    public ListNode reverseList(ListNode head){
+//
+//        if(head==null){
+//            return null;
+//        }
+//
+//        ListNode newList=null;
+//        ListNode cur=head;
+//
+//        while(head!=null){
+//            cur=head.next;
+//            head.next=newList;
+//            newList=head;
+//            head=cur;
+//        }
+//        return newList;
+//    }
 
+    public ListNode reverseList(ListNode head){
         if(head==null){
             return null;
         }
-
         ListNode newList=null;
         ListNode cur=head;
-
-        while(head!=null){
+        while(cur!=null){
             cur=head.next;
             head.next=newList;
             newList=head;
             head=cur;
         }
         return newList;
+
     }
 }
